@@ -5,8 +5,8 @@
 MPU9250 mpu1; // 첫 번째 MPU9250 센서 객체 생성
 MPU9250 mpu2; // 두 번째 MPU9250 센서 객체 생성
 
-const float accelThreshold = 0.5; // 가속도계 데이터 필터링을 위한 임계값
-const float gyroThreshold = 5.0;  // 자이로스코프 데이터 필터링을 위한 임계값
+const float accelThreshold = 0.5; // 가속도계 데이터 필터링을 위한 임의의 임계값
+const float gyroThreshold = 5.0;  // 자이로스코프 데이터 필터링을 위한 임의의 임계값
 
 struct SensorValue {
   String name;  // 센서 값의 이름 (예: "mpu1_accelX")
@@ -63,7 +63,7 @@ void setup() {
 void loop() {
   SensorInfo filteredSensorInfo1 = getFilteredSensorData(mpu1, "mpu1");
   SensorInfo filteredSensorInfo2 = getFilteredSensorData(mpu2, "mpu2");
-
+ 
   printSensorData(filteredSensorInfo1); // 첫 번째 센서 데이터 출력
   printSensorData(filteredSensorInfo2); // 두 번째 센서 데이터 출력
 
