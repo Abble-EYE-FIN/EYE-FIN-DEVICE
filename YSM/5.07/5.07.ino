@@ -131,7 +131,7 @@ void setup() {
   client.setServer(mqtt_server, mqtt_port);
   client.setCallback(callback);
 
-Wire.begin();         // I2C 통신 시작
+  Wire.begin();         // I2C 통신 시작
   delay(2000);          // 센서 초기화를 위해 2초간 대기
 
   // 센서 연결 상태 확인
@@ -179,7 +179,6 @@ if (client.publish(mqtt_topic, buffer)) { //토픽 발행
 
   delay(5000);  // Send every 5 seconds
  
-
 
  
 }
